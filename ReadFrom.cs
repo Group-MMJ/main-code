@@ -9,7 +9,12 @@ namespace ConsoleApp1
     {
         public void read_s()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"D:\University of Lincoln\SEM B\Assessment1Data.txt");
+
+            //Janek's path: @"D:\University of Lincoln\SEM B\Assessment1Data.txt";
+            Console.WriteLine("Enter address path to the file");
+            var fileName = @"" + Console.ReadLine();       
+
+            string[] lines = System.IO.File.ReadAllLines(fileName);
             //12 lines total
             foreach (string line in lines)
             {
@@ -17,11 +22,12 @@ namespace ConsoleApp1
             }
             Console.WriteLine("\n");
 
-            //prints entire line if it finds a keyword
-            var fileName = @"D:\University of Lincoln\SEM B\Assessment1Data.txt";
+            Console.Write("Specify the name of the party : ");
+            string partyName = Console.ReadLine();
+
             foreach (var line in File.ReadLines(fileName))
             {
-                if (line.Contains("Labour"))
+                if (line.Contains(partyName))
                 {
                     Console.WriteLine("test: {0}", line);
                     break;
