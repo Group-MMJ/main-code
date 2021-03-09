@@ -18,12 +18,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            ReadFrom object1 = new ReadFrom();
             dHondt object2 = new dHondt();
-
-            object1.read_s();
-            object2.Victor(22);
-
+            object2.Victor();
             Console.ReadKey();
         }
 
