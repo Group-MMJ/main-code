@@ -42,7 +42,7 @@ namespace ConsoleApp1
             {
                 if (line.Contains(partyName))
                 {
-                    Console.WriteLine("Party: {0}", line);
+                    Console.WriteLine("\nParty: {0}", line);
                     break;
                 }
             }
