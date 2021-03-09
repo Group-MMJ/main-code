@@ -26,15 +26,18 @@ namespace ConsoleApp1
             Console.Write("\nHow many rounds would you like the calculation to go through? : ");
             roundnum = Convert.ToInt32(Console.ReadLine());
 
-            int numend = (numseat / 2) - mepnum;
+            int numend = (numseat / 1) + mepnum;
 
             int x = 1;
-            do
+            while (x <= roundnum)
             {
-                numend = (numseat / 2) - mepnum;
+                for (int h = 1; h < roundnum; h++)
+                {
+                    numend = (numseat / 2) + mepnum;
+                }
                 Console.WriteLine($"Round : {x} \tFinal number : {numend}");
                 x++;
-            } while (x <= roundnum);
+            } 
 
             //saves the result into a new file
 
