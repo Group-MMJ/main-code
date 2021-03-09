@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    class dHondt : ReadFrom
+    class dHondt1 : ReadFrom
     {
         private int numseat;
 
@@ -28,32 +28,36 @@ namespace ConsoleApp1
 
             int numend = (numseat / 2) - mepnum;
 
-            /*for (int i = 1; i < roundnum; i++)
-            {
-
-                if (i <= roundnum)
-                {   
-                    numend = (numseat / 2) - mepnum;
-                    Console.WriteLine($"Round : {i} \tFinal number : {numend}");
-                }
-
-                if (i == roundnum)
-                {
-                    //Console.WriteLine($"Round : {i} \tFinal number : {numend}");
-                    break;
-                }
-
-            }*/
-
+            //Victor dHondt calculation
             int x = 1;
             do
             {
                 numend = (numseat / 2) - mepnum;
-                Console.WriteLine($"Round : {x} \tFinal number : {numend}");
+                Console.WriteLine($"Round : {x} \tVotes after : {numend}");
                 x++;
             } while (x <= roundnum);
 
             //saves the result into a new file
+            Console.WriteLine("What will be your name of the file? : ");
+            string nameNew = Console.ReadLine();
+            string pathNew = @"C:\Users\janek\Desktop\" + nameNew + ".txt";
+
+            if (!File.Exists(pathNew))
+            {
+                using (StreamWriter sw = File.CreateText(pathNew))
+                {
+                    sw.WriteLine(numend);
+                }
+
+                using (StreamReader sr = File.OpenText(pathNew))
+                {
+                    string a = "";
+                    while ((a = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(a);
+                    }
+                }
+            }
 
         }
     }

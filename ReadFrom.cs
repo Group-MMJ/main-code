@@ -8,7 +8,13 @@ namespace ConsoleApp1
 {
     class ReadFrom
     {
-        public int roundnum;
+        private int numround;
+
+        public int roundnum
+        {
+            get { return numround; }
+            set { numround = value; }
+        }
 
         public void read_s()
         {
@@ -40,9 +46,6 @@ namespace ConsoleApp1
                     break;
                 }
             }
-
-            Console.Write("\nHow many rounds would you like the calculation to go through? : ");
-            roundnum = Convert.ToInt32(Console.ReadLine());
         }
 
     }
