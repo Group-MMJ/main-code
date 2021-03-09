@@ -28,23 +28,6 @@ namespace ConsoleApp1
 
             int numend = (numseat / 2) - mepnum;
 
-            /*for (int i = 1; i < roundnum; i++)
-            {
-
-                if (i <= roundnum)
-                {   
-                    numend = (numseat / 2) - mepnum;
-                    Console.WriteLine($"Round : {i} \tFinal number : {numend}");
-                }
-
-                if (i == roundnum)
-                {
-                    //Console.WriteLine($"Round : {i} \tFinal number : {numend}");
-                    break;
-                }
-
-            }*/
-
             int x = 1;
             do
             {
