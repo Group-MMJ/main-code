@@ -7,7 +7,13 @@ namespace ConsoleApp1
 {
     class dHondt : ReadFrom
     {
-        private int numseat;
+        private int _numseat;
+
+        public int numseat
+        {
+            get { return _numseat; }
+            set { _numseat = value; }
+        }
 
         private int mepnum = 5;
 
@@ -36,11 +42,12 @@ namespace ConsoleApp1
             while (x <= roundnum)
             {
                 
-                for (int h = 1; h < roundnum; h++)
+                /*for (int h = 1; h < roundnum; h++)
                 {
                     numend = (numseat / 1) + mepnum;
-                }
+                }*/
                 Console.WriteLine($"Round : {x} \tVotes : {numend}");
+                numend = (numseat / 1) + mepnum;
                 x++;
             } 
 
